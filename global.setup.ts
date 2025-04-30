@@ -11,7 +11,7 @@ export default async function globalSetup(config: FullConfig) {
   try {
     const requestBody = {
       email: usersData.admin.email,
-      password: process.env.PASSWORD!,
+      password: usersData.admin.password,
       username: usersData.admin.username,
     };
 

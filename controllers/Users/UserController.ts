@@ -23,12 +23,9 @@ export class UserController {
     username: string;
   }) {
     const requestBody = { user: authData };
-    const response = await this.request.post(
-      "https://conduit-api.learnwebdriverio.com/api/users",
-      {
-        data: requestBody,
-      }
-    );
+    const response = await this.request.post("/api/users", {
+      data: requestBody,
+    });
 
     return response;
   }

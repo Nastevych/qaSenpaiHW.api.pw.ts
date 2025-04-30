@@ -4,7 +4,10 @@ import { ArticlesController } from "../controllers/Articles/ArticlesController";
 import { usersData } from "../credentials";
 
 test.use({
-  authData: { email: usersData.admin.email, password: process.env.PASSWORD },
+  authData: {
+    email: usersData.admin.email,
+    password: usersData.admin.password,
+  },
 });
 
 test("test static method", async ({}) => {

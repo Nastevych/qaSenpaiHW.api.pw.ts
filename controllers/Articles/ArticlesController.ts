@@ -38,4 +38,21 @@ export class ArticlesController {
 
     return response;
   }
+
+  async updateArticle(slug: string, updateArticleData: Article) {
+    const requestBody = {
+      article: updateArticleData,
+    };
+
+    const response = await this.request.put(`/api/articles/${slug}`, {
+      data: requestBody,
+    });
+
+    return response;
+  }
+
+  async deleteArticle(slug: string) {
+    const response = await this.request.delete(`/api/articles/${slug}`);
+    return response;
+  }
 }

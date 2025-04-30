@@ -1,5 +1,5 @@
 export const articleContentTestData = {
-  title: "some title",
-  body: "some body",
-  tagList: ["qa", "dojo", "test"],
+  title: "New article title",
+  body: "New article body",
+  tagList: ["qa", "nast", "test"],
 };

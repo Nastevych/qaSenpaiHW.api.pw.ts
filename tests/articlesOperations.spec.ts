@@ -1,7 +1,7 @@
 import { test, expect } from "./request.fixture";
-import { Article } from "../controllers/Articles/ArticleType";
 import { ArticlesController } from "../controllers/Articles/ArticlesController";
 import { usersData } from "../credentials";
+import { articleContentTestData } from "./articlesTest.data";
 
 test.use({
   authData: {
@@ -18,12 +18,9 @@ test("test static method", async ({}) => {
 test("MQA-125151 create article - it should created", async ({ request }) => {
   const articlesController = new ArticlesController(request);
 
-  const requestBody: Article = {
-    title: "some title",
-    body: "some body",
-    tagList: ["qa", "dojo", "test"],
-  };
-  const response = await articlesController.createArticle(requestBody);
+  const response = await articlesController.createArticle(
+    articleContentTestData
+  );
 
   expect(response.status()).toBe(200);
 });

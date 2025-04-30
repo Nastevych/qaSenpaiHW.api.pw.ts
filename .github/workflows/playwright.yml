@@ -10,6 +10,7 @@ jobs:
   test:
     env:
       PASSWORD: ${{vars.PASSWORD}}
+      BASE_URL: ${{vars.BASE_URL}}
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:

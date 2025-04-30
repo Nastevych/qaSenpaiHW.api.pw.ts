@@ -8,6 +8,8 @@ on:
 
 jobs:
   test:
+    env:
+      PASSWORD: ${{vars.PASSWORD}}
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
